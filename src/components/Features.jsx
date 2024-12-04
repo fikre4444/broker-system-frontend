@@ -7,8 +7,9 @@ import { PiCowDuotone } from "react-icons/pi";
 
 const Features = () => {
   return (
-    <section className="mt-40 py-20 bg-gray-100">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+    <section className="py-3 bg-gray-100">
+      <h1 className="text-center text-3xl font-bold text-blue-500">Services</h1>
+      <div className="py-10 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {/* Houses */}
         <div className="bg-white rounded-lg shadow-lg p-6 text-center">
           {/* <img src={house} alt="Houses" className="h-32 mx-auto mb-4" /> */}

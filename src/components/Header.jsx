@@ -5,7 +5,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white shadow-md">
+    <header className="bg-white shadow-md mb-1">
       <div className="max-w-7xl mx-auto flex justify-between items-center p-5 py-3">
         {/* Logo */}
         <Logo />
