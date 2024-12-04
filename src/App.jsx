@@ -2,6 +2,7 @@ import Header from "./components/Header"
 import Hero from "./components/Hero"
 import Footer from "./components/Footer"
 import Features from "./components/Features"
+import LandingPage from "./components/LandingPage"
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
       <Hero />
       <Features />
       <Footer />
+      {/* <LandingPage /> */}
     </div>
   )
 }

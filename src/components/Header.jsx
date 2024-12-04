@@ -1,16 +1,14 @@
 import { useState } from "react";
+import Logo from "./Logo";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header className="bg-white shadow-md">
-      <div className="max-w-7xl mx-auto flex justify-between items-center p-5">
+      <div className="max-w-7xl mx-auto flex justify-between items-center p-5 py-3">
         {/* Logo */}
-        <div className="flex items-center">
-          <img src="/path-to-logo.png" alt="Website Logo" className="h-10 w-10" />
-          <span className="ml-3 text-2xl font-bold text-blue-600">Brokerly</span>
-        </div>
+        <Logo />
 
         {/* Navigation */}
         <nav className="hidden md:flex space-x-6 text-lg font-medium text-gray-600">

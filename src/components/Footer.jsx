@@ -11,7 +11,7 @@ const Footer = () => {
           <a href="#" className="hover:underline">Twitter</a>
           <a href="#" className="hover:underline">Instagram</a>
         </div>
-        <p className="mt-4 text-sm text-gray-300">© 2024 Brokerly. All rights reserved.</p>
+        <p className="mt-4 text-sm text-gray-300">© 2024 Axumawit. All rights reserved.</p>
       </div>
     </footer>
   );
