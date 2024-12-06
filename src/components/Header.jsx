@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Logo from "./Logo";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,10 +13,10 @@ const Header = () => {
 
         {/* Navigation */}
         <nav className="hidden md:flex space-x-6 text-lg font-medium text-gray-600">
-          <a href="#" className="hover:text-blue-600">Home</a>
-          <a href="#" className="hover:text-blue-600">Products</a>
-          <a href="#" className="hover:text-blue-600">About Us</a>
-          <a href="#" className="hover:text-blue-600">Contact</a>
+          <Link to="/" className="hover:text-blue-600">Home</Link>
+          <Link to="/products" className="hover:text-blue-600">Products</Link>
+          <Link to="about-us" className="hover:text-blue-600">About Us</Link>
+          <Link to="contact" className="hover:text-blue-600">Contact</Link>
         </nav>
 
         {/* Burger Menu */}

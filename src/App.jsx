@@ -1,18 +1,18 @@
-import Header from "./components/Header"
-import Hero from "./components/Hero"
-import Footer from "./components/Footer"
-import Features from "./components/Features"
-import LandingPage from "./components/LandingPage"
+import Homepage from "./pages/Homepage"
+import Layout from "./HOCS/Layout"
+import { Route, Routes } from "react-router-dom"
+import Products from "./pages/Products"
 
 function App() {
 
   return (
     <div>
-      <Header />
-      <Hero />
-      <Features />
-      <Footer />
-      {/* <LandingPage /> */}
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/products" element={<Products />} />
+        </Routes>
+      </Layout>
     </div>
   )
 }

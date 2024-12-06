@@ -1,4 +1,5 @@
 import hero from '../assets/hero2.jpg'
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -23,9 +24,9 @@ const Hero = () => {
           {/* <p className="text-gray-500 font-semibold">We have generated a lot of services to our above 50K customers.</p> */}
         </div>
       </div>
-      <button className="mt-6 bg-white text-blue-600 font-bold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-200 transition-all">
+      <Link to="/products" className="inline-block mt-6 bg-white text-blue-600 font-bold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-200 transition-all">
         Check out products
-      </button>
+      </Link>
     </div>
 
     {/* Image Content */}
