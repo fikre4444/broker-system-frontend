@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import cattle from '../assets/cattle.jpg';
 import house from '../assets/house.jpeg';
 import land from '../assets/land.jpg';
@@ -183,7 +183,7 @@ const Products = ({ productsList = someProducts }) => {
                   <p className="text-blue-500 font-semibold">
                     {product.price} ብር
                   </p>
-                  <button className="mt-2 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
+                  <button className="mt-2 w-full bg-green-500 text-white py-2 rounded hover:bg-blue-600">
                     View Details
                   </button>
                 </div>

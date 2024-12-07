@@ -24,9 +24,14 @@ const Hero = () => {
           {/* <p className="text-gray-500 font-semibold">We have generated a lot of services to our above 50K customers.</p> */}
         </div>
       </div>
-      <Link to="/products" className="inline-block mt-6 bg-white text-blue-600 font-bold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-200 transition-all">
-        Check out products
-      </Link>
+      <div className="inline-block">
+        <Link to="/products" className="inline-block mx-2 mt-6 bg-white text-blue-600 font-bold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-200 transition-all">
+          Check out products
+        </Link>
+        <Link to="/login" className="inline-block mx-2 mt-6 bg-white text-blue-600 font-bold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-200 transition-all">
+          Login
+        </Link>
+      </div>
     </div>
 
     {/* Image Content */}
