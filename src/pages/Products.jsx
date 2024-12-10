@@ -51,7 +51,7 @@ const someProducts = [
     image: house,
     category: "Houses", 
     date: "8-11-2008"
-  },
+  }
 ]
 
 const Products = ({ productsList = someProducts }) => {
