@@ -8,12 +8,15 @@ import Contact from "./pages/Contact"
 import ForgotPassword from "./pages/ForgotPassword"
 import UserDashboard from "./pages/UserDashboard"
 import OAuth2LoginHandler from "./pages/OAuth2LoginHandler"
+import { ToastContainer } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
   return (
     <div>
       <Layout>
+        <ToastContainer />
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/login" element={<Login />} />

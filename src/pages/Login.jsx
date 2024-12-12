@@ -25,7 +25,8 @@ const Login = () => {
     setPassword(resultingValue);
   }
 
-  const handleLogin = async () => {
+  const handleLogin = async (event) => {
+    event.preventDefault();
     await sendApiRequest({
       url: `${baseUrl}/api/auth/login`,
       method: 'POST',
@@ -43,12 +44,11 @@ const Login = () => {
   }
 
   const handleSignInWithGoogle = async () => {
-    window.location.href = `http://localhost:8080/oauth2/authorization/google`;
+    window.location.href = `${baseUrl}/oauth2/authorization/google`;
   };
 
   return (
     <>
-      <ToastContainer />
       <div className="min-h-screen bg-gradient-to-r from-blue-400 to-green-400 flex items-center justify-center">
         <div className="bg-white shadow-lg rounded-lg w-full max-w-md p-8">
           <h1 className="text-3xl font-bold text-center text-blue-600">Welcome!</h1>
@@ -56,7 +56,7 @@ const Login = () => {
             Sign in to continue with Axumawit Broker
           </p>
 
-          <div className="mt-6">
+          <form className="mt-6" onSubmit={handleLogin}>
             <div className="mb-4">
               <label className="block text-sm font-medium text-gray-700">Username</label>
               <input
@@ -65,6 +65,7 @@ const Login = () => {
                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
                 value={username}
                 onChange={handleUsernameChange}
+                required={true}
               />
             </div>
             <div className="mb-4">
@@ -75,6 +76,7 @@ const Login = () => {
                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
                 value={password}
                 onChange={handlePasswordChange}
+                required={true}
               />
             </div>
             <div className="text-right">
@@ -86,13 +88,13 @@ const Login = () => {
               </Link>
             </div>
             <button
-              onClick={() => {handleLogin()}}
-              type="button"
+              // onClick={() => {handleLogin()}}
+              type="submit"
               className="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
             >
               Sign In
             </button>
-          </div>
+          </form>
 
           <div className="mt-6 flex items-center justify-between">
             <hr className="w-1/3 border-gray-300" />
