@@ -59,7 +59,7 @@ const Header = () => {
             <Link to="/products" className="block hover:text-blue-600">Products</Link>
             {/* <Link to="about-us" className="hover:text-blue-600">About Us</Link> */}
             <Link to="/contact" className="block hover:text-blue-600">Contact</Link>
-            <button onClick={() => {navigate("/login")}} className="block p-2 px-5 bg-blue-500 rounded-md text-white shadow-sm hover:bg-gray-100 hover:border-2 hover:border-blue-500 hover:text-blue-700 duration-75">Login</button>
+            <button onClick={() => {navigate("/login")}} className="block p-2 px-5 bg-blue-500 rounded-md text-white shadow-sm hover:bg-gray-100 hover:border-2 hover:border-blue-500 hover:text-blue-700 duration-75">Logain</button>
             <button onClick={() => {navigate("/register")}} className="block p-2 px-5 bg-green-500 rounded-md text-white shadow-sm hover:bg-gray-100 hover:border-2 hover:border-blue-500 hover:text-blue-700 duration-75">Register</button> 
           </ul>
         </nav>
