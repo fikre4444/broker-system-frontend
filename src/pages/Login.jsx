@@ -34,9 +34,10 @@ const Login = () => {
       startMessage: "Logging In",
       successMessage: "Successfully Logged In",
       errorMessage: "Error: Incorrect Credentials",
-      onSuccess: (data) => {
-        console.log(data);
-        localStorage.setItem("jwt", data);
+      onSuccess: (response) => {
+        console.log(response.data);
+        localStorage.setItem("jwt", response.headers["authorization"]);
+        //localStorage.setItem("jwt", data);
         navigate("/user-dashboard");
       },
       onError: (error) => console.log(error),

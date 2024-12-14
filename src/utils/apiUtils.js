@@ -37,7 +37,7 @@ const sendApiRequest = async ({
         isLoading: false,
         autoClose: successDuration,
       });
-      onSuccess(response.data);
+      onSuccess(response);
     }
   } catch (error) {
     console.error(error);
@@ -65,10 +65,10 @@ export default sendApiRequest;
 //   token, // pass the token to automatically include in headers
 //   successMessage: "Successfully processed Applications",
 //   errorMessage: "There was an error while processing!",
-//   onSuccess: (data) => {
-//     console.log(data.temporaryPlacementsEssentials);
+//   onSuccess: (response) => {
+//     console.log(response.data.temporaryPlacementsEssentials);
 //     setGotTemporaryPlacementResults(true);
-//     setTemporaryPlacements(data.temporaryPlacements);
+//     setTemporaryPlacements(response.data.temporaryPlacements);
 //   },
 //   onError: (error) => console.log(error),
 //   onFinally: () => setIsAssigningStudents(false)

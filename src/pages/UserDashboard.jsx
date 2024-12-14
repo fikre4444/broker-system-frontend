@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 
 const UserDashboard = () => {
+  const baseUrl = import.meta.env.VITE_API_BASE_URL;
   const [jwt, setJwt] = useState(localStorage.getItem("jwt"));
   const [gotResponse, setGotResponse] = useState(false);
   const [responseData, setResponseData] = useState("");
@@ -11,7 +12,7 @@ const UserDashboard = () => {
 
   const getDatathen = async () => {
     console.log("the jwt is "+jwt)
-    const response = await axios.get("http://localhost:8080/api/user/say-hello", {
+    const response = await axios.get(`${baseUrl}/api/user/say-hello`, {
       headers: {
         "authorization": `Bearer ${jwt}`, // Ensure proper capitalization
       },
@@ -27,7 +28,7 @@ const UserDashboard = () => {
   }
 
   const handleViewProfile = async () => {
-    const response = await axios.get("http://localhost:8080/api/user/get-profile", {
+    const response = await axios.get(`${baseUrl}/api/user/get-profile`, {
       headers: {
         "authorization": `Bearer ${jwt}`, // Ensure proper capitalization
       },
@@ -41,7 +42,7 @@ const UserDashboard = () => {
 
   const getMyProfilePic = async () => {
     const response = await axios.get(
-      "http://localhost:8080/api/user/get-my-profile-pic",
+      `${baseUrl}/api/user/get-my-profile-pic`,
       {
         headers: {
           "authorization": `Bearer ${jwt}`, // Ensure proper capitalization

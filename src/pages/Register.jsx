@@ -6,8 +6,11 @@ import { handleFirstName, handleLastName, handleEmail, handleUsername } from "..
 import { sleep } from "../utils/otherUtils";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const baseUrl = import.meta.env.VITE_API_BASE_URL;
+  const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors, isSubmitting } }= useForm();
   const [ isUploading, setIsUploading ] = useState(false);
   const [profilePicture, setProfilePicture] = useState(null);
@@ -74,10 +77,10 @@ const Register = () => {
     console.log("registering is being done");
     console.log(formData);
     const registeringToast = toast.loading("Registering...");
-    await sleep(2000);
+    // await sleep(2000);
     try{
       toast.update(registeringToast, {closeButton: true});
-      const response = await axios.post("http://localhost:8080/api/register/register-with-profile-pic", formData, {
+      const response = await axios.post(`${baseUrl}/api/register/register-with-profile-pic`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -90,7 +93,9 @@ const Register = () => {
           autoClose: 1000,
           isLoading: false,
         });
-        console.log(response.data);
+        const jwtToken = response.headers["authorization"];
+        localStorage.setItem("jwt", jwtToken);
+        navigate("/user-dashboard");
       }
     } catch (error) {
       toast.update(registeringToast, {
