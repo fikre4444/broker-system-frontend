@@ -9,8 +9,6 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    env:
-      VITE_API_BASE_URL: ${{ secrets.VITE_API_BASE_URL }}
 
     steps:
       - name: Checkout repo
@@ -22,10 +20,11 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
+      - name: Set environment variable
+        run: echo "VITE_API_BASE_URL=http://ec2-13-49-222-88.eu-north-1.compute.amazonaws.com" >> .env
+
       - name: Build project
-        run: |
-          echo "VITE_API_BASE_URL=${VITE_API_BASE_URL}" >> .env
-          npm run build
+        run: npm run build
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v3
