@@ -46,7 +46,7 @@ const someProducts = [
   },
   {
     id: "116",
-    name: "70 kare house",
+    name: "80 kare house",
     price: 2000000,
     image: house,
     category: "Houses", 
