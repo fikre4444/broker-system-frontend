@@ -12,9 +12,10 @@ const UserDashboard = () => {
 
   const getDatathen = async () => {
     console.log("the jwt is "+jwt)
-    const response = await axios.get(`${baseUrl}/api/user/say-hello`, {
+    const response = await axios.get(`https://9096-196-190-32-86.ngrok-free.app/api/user/say-hello`, {
       headers: {
         "authorization": `Bearer ${jwt}`, // Ensure proper capitalization
+        "ngrok-skip-browser-warning": "true",
       },
     });
     if(response.status === 200){
@@ -28,9 +29,10 @@ const UserDashboard = () => {
   }
 
   const handleViewProfile = async () => {
-    const response = await axios.get(`${baseUrl}/api/user/get-profile`, {
+    const response = await axios.get(`https://9096-196-190-32-86.ngrok-free.app/api/user/get-profile`, {
       headers: {
         "authorization": `Bearer ${jwt}`, // Ensure proper capitalization
+        "ngrok-skip-browser-warning": "true",
       },
     });
     console.log(response.data);
@@ -42,10 +44,11 @@ const UserDashboard = () => {
 
   const getMyProfilePic = async () => {
     const response = await axios.get(
-      `${baseUrl}/api/user/get-my-profile-pic`,
+      `https://9096-196-190-32-86.ngrok-free.app/api/user/get-my-profile-pic`,
       {
         headers: {
           "authorization": `Bearer ${jwt}`, // Ensure proper capitalization
+          "ngrok-skip-browser-warning": "true",
         },
         responseType: "blob", // Ensures binary data is fetched
       }

@@ -28,7 +28,7 @@ const Login = () => {
   const handleLogin = async (event) => {
     event.preventDefault();
     await sendApiRequest({
-      url: `${baseUrl}/api/auth/login`,
+      url: `https://9096-196-190-32-86.ngrok-free.app/api/auth/login`,
       method: 'POST',
       requestBody: {username, password},
       startMessage: "Logging In",
@@ -45,7 +45,7 @@ const Login = () => {
   }
 
   const handleSignInWithGoogle = async () => {
-    window.location.href = `${baseUrl}/oauth2/authorization/google`;
+    window.location.href = `https://9096-196-190-32-86.ngrok-free.app/oauth2/authorization/google`;
   };
 
   return (

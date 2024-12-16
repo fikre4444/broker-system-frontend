@@ -80,9 +80,10 @@ const Register = () => {
     // await sleep(2000);
     try{
       toast.update(registeringToast, {closeButton: true});
-      const response = await axios.post(`${baseUrl}/api/register/register-with-profile-pic`, formData, {
+      const response = await axios.post(`https://9096-196-190-32-86.ngrok-free.app/api/register/register-with-profile-pic`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
+          "ngrok-skip-browser-warning": "true",
         },
       });
       if(response.status == 200) {
